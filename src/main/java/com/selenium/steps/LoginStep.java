@@ -32,8 +32,10 @@ public class LoginStep {
     public void i_see_the(String title) {
         if (title.equals("https://www.saucedemo.com/inventory.html")){
             Assert.assertEquals(title,driver.getCurrentUrl());
+            driver.close();
         } else {
             Assert.assertEquals(title,"Epic sadface: Sorry, this user has been locked out.");
+            driver.close();
         }
     }
     @And("user click on logout")
